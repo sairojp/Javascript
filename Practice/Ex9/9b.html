@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <input type="text" id="field">
+    <button onclick="ConvertToCm()">Convert to cm</button>
+    <button onclick="ConvertToinch()">Convert to inch</button>
+    <script>
+      let div = document.createElement('div');
+      div.id="result";
+      function ConvertToCm(){
+        renderEmpty();
+        let val = document.getElementById("field").value ;
+        let convertedval = +val*2.54;
+        div.innerHTML=parseFloat(convertedval).toFixed(2)+"cm";
+        document.body.appendChild(div);
+      }
+      function ConvertToinch(){
+        renderEmpty();
+        let val = document.getElementById("field").value ;
+        let convertedval = +val/2.54;
+      
+        div.innerHTML=parseFloat(convertedval).toFixed(2)+"in";
+        document.body.appendChild(div);
+      }
+      function renderEmpty(){
+        div.innerHTML=null;
+      }
+      
+    </script>
+  </body>
+</html>

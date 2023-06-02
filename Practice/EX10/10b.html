@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="receipt"></div>
+    <script>
+      let element = document.getElementById('receipt');
+      function emptydiv(){
+        element.innerHTML=null;
+      }
+     function displayReceipt(array){
+      let total = 0;
+      emptydiv();
+      array.forEach(function(item){
+        let div1= document.createElement('div');
+        div1.innerHTML = item.name + "$" + item.price +"*" + item.quantity;
+        total = total + item.price*item.quantity;
+        element.appendChild(div1);
+        
+      });
+        let div2= document.createElement('div');
+        div2.innerHTML = "Cart Total" + "=" + "$" + total;
+        element.appendChild(div2);
+     } 
+     displayReceipt([
+        { name: 'Apple', price: 5, quantity: 2 },
+        { name: 'Orange', price: 3, quantity: 3 }
+      ]);
+    </script>
+  </body>
+</html>

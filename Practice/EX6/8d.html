@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  </head>
+  <body>
+    <input type="text" id="input-text" />
+    <button onclick="Clicked()">Add</button>
+    <script>
+      function Clicked(){
+        let element = document.getElementById('input-text');
+        let value = element.value;
+        let addedText = document.createElement('div') ;
+        addedText.innerHTML = value;
+        document.body.appendChild(addedText);
+      }
+    </script>
+  </body>
+</html>

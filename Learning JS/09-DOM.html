@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>
+      hello
+    </button>
+    <button class="button2">
+      hello2
+    </button>
+    <script>
+      document.querySelector('button'); //this gets element form the html 
+      
+      console.log(document.querySelector('button'));
+      
+      document.querySelector('button')
+      .innerHTML = 'Changed';
+      
+      // dot is used to select class attributed
+      document.querySelector('.button2')
+      .innerHTML = 'Changed2'; 
+
+
+      /*
+      these are objects from document model that is linked with the html
+      html is converted to javascript object which has properties and methods
+      document.body.innerHTML = "hello";
+      document.title = 'Good job';
+      */
+
+
+    </script>
+  </body>
+</html>

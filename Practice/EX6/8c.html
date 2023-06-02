@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  </head>
+  <body>
+    <div id="counter">100</div>
+    <button onclick="Clicked()" id="down-button">Down</button>
+    <script>
+      let count = 100;
+      function Clicked(){
+        if(count===0){
+          count = 0;
+        }
+        else
+        count = count - 1;
+        const element = document.getElementById('counter');
+        element.innerHTML = count ;
+      }
+    </script>
+  </body>
+</html>

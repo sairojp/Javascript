@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon shipping</title>
+  </head>
+  <body>
+    <p>
+      Amazon Shipping calculato
+    </p>
+    <p>Orders under$40 =+ $10 shipping</p>
+    <p>Orders over $40 =FREE shipping </p>
+
+    <input type="text" onkeydown="
+      handleCostKeydown(event);
+    "
+    class="cost">
+    <button onclick="calculateCost();">
+      calculate</button>
+    <p class="totalCost"></p>
+
+
+    <script>
+      function handleCostKeydown(event){
+        if (event.key === 'Enter'){
+          calculateCost();
+        }
+      }
+
+      function calculateCost(){
+        
+        const inputElement = document.querySelector('.cost');
+        
+        // the dom gets the value in string so we converted it to number manually
+         
+        let initialCost = Number(inputElement.value);
+         
+         if(initialCost < 40 ){
+          initialCost += 10;
+          document.querySelector('.totalCost').innerHTML=`$${initialCost}`;
+         }
+         else{
+          document.querySelector('.totalCost').innerHTML=`$${initialCost }`;
+         }
+      }
+
+    </script>
+  </body>
+</html>

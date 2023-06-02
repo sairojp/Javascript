@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      let total = 0;
+
+      function createCart(foodprices){
+        const foods = Object.keys(foodprices);
+        foods.forEach(function (food) {
+          const cartItem = document.createElement('div');
+          const foodprice = foodprices[food];
+          cartItem.innerHTML = food +' $'+ foodprice;
+          const addButton = document.createElement('button');
+          addButton.innerHTML='ADD';
+          addButton.onclick = function(){
+            total = total + foodprice;
+          };
+          cartItem.appendChild(addButton);
+          document.body.appendChild(cartItem);
+        });
+      }
+      createCart({ Apple: 3, Orange: 4, Egg: 2 });
+    </script>
+  </body>
+</html>

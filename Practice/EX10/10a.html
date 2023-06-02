@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+      function cartTotal(cartarray){
+        let total = 0;
+        cartarray.forEach(function(item) {
+          total = total + item.price * item.quantity;
+        });
+        console.log(total);
+      }
+      cartTotal([
+        { name: 'Apple', price: 4, quantity: 2 },
+        { name: 'Orange', price: 4, quantity: 3 }
+      ])
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  </head>
+  <body>
+    <div id="counter">0</div>
+    <button onclick="Clicked()" id="up-button">Up</button>
+    <script>
+      let count = 0;
+      function Clicked(){
+        console.log('done');
+        count = count + 1;
+        const element = document.getElementById('counter');
+        element.innerHTML = count ;
+      }
+    </script>
+  </body>
+</html>
