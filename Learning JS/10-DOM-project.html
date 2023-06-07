@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM PROJECTS</title>
+    <style>
+
+      body{
+        font-family: Arial;
+      }
+
+      .subscribe-button{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left:15px;
+        padding-right:15px;
+        font-weight: bold;
+        border:none;
+        border-radius: 20px;
+        cursor:pointer;
+        background-color: black;
+        color:white;
+        
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color:black;
+      }
+
+    </style>
+  </head>
+  <BODY>
+    <p>
+      Youtube Subscribe Button
+    </p>
+    <button onclick="
+    const buttonStatus = document.querySelector('.subscribe-button');
+    Subscribe();
+    "class='js-subscribe-button subscribe-button'>Subscribe</button>
+
+    <script>
+      function Subscribe(){
+        const buttonStatus = document.querySelector('.subscribe-button');
+
+        if(buttonStatus.innerHTML === 'Subscribe'){
+          buttonStatus.innerHTML='Subscribed';
+          // creates a class attribute to style css 
+          buttonStatus.classList.add('is-subscribed');
+        }
+        else{
+          buttonStatus.innerHTML='Subscribe';//.innerText can be used to just capture text without spaces
+
+          //removes the style to previous state
+          buttonStatus.classList.remove('is-subscribed');
+  }
+  }
+    </script>
+  </BODY>
+</html>

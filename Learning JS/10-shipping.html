@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon shipping</title>
+    <style>
+
+      body{
+        font-family: Arial;
+      }
+      .input-cost{
+        padding-top:10px;
+        padding-bottom: 10px;
+      }
+      .calculate-button{
+        border:none;
+        font-size: smallf;
+        padding-left: 13px;
+        padding-right:13px;
+        padding-top:12px;
+        padding-bottom: 12px;
+        font-weight:bold;
+        background-color: green;
+        color:white;
+        cursor:pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>
+      Amazon Shipping calculator
+    </p>
+    <p>Orders under$40 =+ $10 shipping</p>
+    <p>Orders over $40 =FREE shipping </p>
+
+    <input class="input-cost cost", type="text" onkeydown="
+      handleCostKeydown(event);"
+    >
+    <button class='calculate-button'
+    onclick="calculateCost();">
+      Calculate</button>
+    <p class="totalCost"></p>
+
+
+    <script>
+      function handleCostKeydown(event){
+        if (event.key === 'Enter'){
+          calculateCost();
+        }
+      }
+
+      function calculateCost(){
+        
+        const inputElement = document.querySelector('.cost');
+        
+        // the dom gets the value in string so we converted it to number manually
+         
+        let initialCost = Number(inputElement.value);
+         
+         if(initialCost < 40 ){
+          initialCost += 10;
+          document.querySelector('.totalCost').innerHTML=`$${initialCost}`;
+         }
+         else{
+          document.querySelector('.totalCost').innerHTML=`$${initialCost }`;
+         }
+      }
+
+    </script>
+  </body>
+</html>
