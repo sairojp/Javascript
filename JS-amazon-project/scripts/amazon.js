@@ -28,7 +28,7 @@ const products = [{
 ];
 let productsHTML = '';
 
-/*generating  html for the data above */ 
+/*generating  html for the data above for amazon.html */ 
 products.forEach((product) => {
   productsHTML += `
     <div class="product-container">
@@ -81,6 +81,7 @@ products.forEach((product) => {
     </div>
   `;
 });
+
 console.log(productsHTML);
 document.querySelector('.js-products-grid').
 innerHTML = productsHTML;
