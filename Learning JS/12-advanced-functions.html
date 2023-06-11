@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced functions</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function greeting(){
+        console.log('hello');
+      }
+      greeting();
+
+      //function is also a value can be saved in var
+      const num =2 ;
+
+      //function without  name = anonymous function
+      const function1 = function (){
+        console.log('hello2');
+      };
+      
+      console.log(function1);
+      function1();
+
+      const object1 = {
+        num: 2,
+        fun: function (){
+          console.log('hello3');
+        }
+        };
+        object1.fun();
+
+        // passing a function to a function
+        function run(param){
+          param();
+        }
+        run(function(){
+          console.log('hello4')
+        });
+        */
+
+
+        //calls function after some time 
+        setTimeout(function(){
+          console.log('timeout');
+          console.log('timeout2');
+        },3000);
+
+        console.log('next line');//this line runs first this concept called asynchronous code as it doesnt wait for the code to finish but rather goes to another line and return backs after the time
+
+        
+        // runs the function continuously after interval
+        setInterval(function(){
+          console.log("interval");
+        },3000);
+
+        console.log('next line2');
+
+
+    </script>
+  </body>
+</html>
