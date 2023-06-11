@@ -1,4 +1,4 @@
-
+/*data is in data folder */
 let productsHTML = '';
 
 /*generating  html for the data above for amazon.html */ 
