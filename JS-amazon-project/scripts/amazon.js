@@ -111,7 +111,7 @@ document.querySelectorAll('.js-add-to-cart')
       }
       
       const timeoutId = setTimeout(()=>{
-        addedMessage.classList.remove('added-to-cart-visible');
+        addedMessage.classList.remove('added-to-cart-now');
       },2000);
 
       addedMessageTimeoutId = timeoutId;
