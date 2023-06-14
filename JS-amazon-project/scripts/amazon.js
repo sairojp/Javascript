@@ -1,7 +1,7 @@
 /*data is in data folder */
 let productsHTML = '';
 
-/*generating  html for the data above for amazon.html */ 
+/*generating  html for the data above for amazon.html */
 products.forEach((product) => {
   productsHTML += `
     <div class="product-container">
@@ -16,7 +16,7 @@ products.forEach((product) => {
 
       <div class="product-rating-container">
         <img class="product-rating-stars"
-          src="images/ratings/rating-${product.rating.stars *10}.png">
+          src="images/ratings/rating-${product.rating.stars * 10}.png">
         <div class="product-rating-count link-primary">
           ${product.rating.count}
         </div>
@@ -59,54 +59,61 @@ products.forEach((product) => {
 console.log(productsHTML);
 
 document.querySelector('.js-products-grid').
-innerHTML = productsHTML;
+  innerHTML = productsHTML;
 
 document.querySelectorAll('.js-add-to-cart')
-.forEach((button) =>{
-  button.addEventListener('click', () => {
-    const productId = button.dataset.productId;
+  .forEach((button) => {
 
-    let matchingItem;
-    
-    cart.forEach((item)=>{
-      if(productId === item.productId ){
-        matchingItem = item;
-    }
-    });
+    //this variable is used to store for timeout using the functionality of closure 
+    // closure = if a function has access to the value , it will always have that access
+    let addedMessageTimeoutId;
 
-    const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`); 
-    const quantity = Number(quantitySelector.value);
-    console.log(quantity);
-    
-    
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
 
-    if(matchingItem){
-      matchingItem.quantity += quantity ;
-    }
-    else{
-      cart.push({
-        productId: productId,
-        quantity: quantity
+      let matchingItem;
+
+      cart.forEach((item) => {
+        if (productId === item.productId) {
+          matchingItem = item;
+        }
       });
-    }
-    let cartQuantity = 0
 
-    cart.forEach((item) =>{
-      cartQuantity += item.quantity;
-    });
+      const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
+      const quantity = Number(quantitySelector.value);
+      console.log(quantity);
 
-    document.querySelector('.js-cart-quantity').
-    innerHTML = cartQuantity;
-    console.log(cart);
-    const added = document.querySelector(`.js-added-to-cart-${productId}`);
-    added.classList.add('added-to-cart-now')
-    
-    const timer = 2000;
-    setTimeout(removeMessage, timer);
 
-    function removeMessage(){
-      added.classList.remove('added-to-cart-now');}
+
+      if (matchingItem) {
+        matchingItem.quantity += quantity;
+      }
+      else {
+        cart.push({
+          productId: productId,
+          quantity: quantity
+        });
+      }
+      let cartQuantity = 0
+
+      cart.forEach((item) => {
+        cartQuantity += item.quantity;
+      });
+
+      document.querySelector('.js-cart-quantity').
+        innerHTML = cartQuantity;
+      console.log(cart);
+      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+      addedMessage.classList.add('added-to-cart-now')
+
+      if (addedMessageTimeoutId){
+        clearTimeout(addedMessageTimeoutId);
+      }
+      
+      const timeoutId = setTimeout(()=>{
+        addedMessage.classList.remove('added-to-cart-visible');
+      },2000);
+
+      addedMessageTimeoutId = timeoutId;
+    })
   });
-  
-  
-});
