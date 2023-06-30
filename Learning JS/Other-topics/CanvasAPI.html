@@ -37,10 +37,22 @@
     */
 
     // Drawing a rectangle
+    /*
     context.strokeStyle = "white";
     context.strokeRect (0, 0, 200, 200);
+
     context.fillStyle = "white";
     context.fillRect (250, 250, 200 , 200);
+    */
+
+    // drawing a circle 
+    // (x,y,r,sAngle, counterclockwise)
+    context.beginPath();
+    context.strokeStyle = "white";
+    context.arc(250,250,100,0 ,2 * Math.PI);
+    context.stroke();
+    context.fillStyle = "blue";
+    context.fill();
 
 
 
