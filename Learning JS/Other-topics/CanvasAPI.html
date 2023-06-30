@@ -15,6 +15,7 @@
     let canvas = document.getElementById("mycanvas");
     let context = canvas.getContext("2d");
 
+    /* Drawing lines 
     context.lineWidth = 5;
     context.beginPath();
     context.moveTo(0 ,0);
@@ -22,6 +23,16 @@
     context.lineTo(250,500);
     context.strokeStyle = "white";
     context.stroke();
+    */
+
+    // Drawing triangle 
+    context.beginPath();
+    context.moveTo(250,0);
+    context.lineTo(0,250);
+    context.lineTo(500,250);
+    context.lineTo(250,0);
+    context.fillStyle = "white";
+    context.fill();
    
   </script>
 </body>
