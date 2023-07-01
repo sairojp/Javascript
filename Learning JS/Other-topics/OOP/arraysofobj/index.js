@@ -21,8 +21,6 @@ function frame(){
   bubbles[0].clear();
   for(let i = 0; i < 5 ; i++){
     bubbles[i].move();
-  }
-  for(let i = 0; i < 5 ; i++){
     bubbles[i].show();
   }
 }
