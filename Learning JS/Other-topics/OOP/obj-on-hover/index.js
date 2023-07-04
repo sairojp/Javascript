@@ -35,7 +35,7 @@ function frame(){
 
 //adds new object on mouse click
 
-/*canvas.addEventListener("mousedown",(e)=>{
+canvas.addEventListener("mousedown",(e)=>{
   addNewBubble(canvas,e);
 })
 function addNewBubble(canvas , e){  
@@ -43,7 +43,7 @@ function addNewBubble(canvas , e){
   console.log(e.clientX);
   let bubbleCreated = new Bubble(e.clientX,e.clientY,r);
   bubbles.push(bubbleCreated);  
-}*/
+}
 
 //deletes on pressing d
 window.addEventListener("keypress",(e)=>{
@@ -54,7 +54,8 @@ window.addEventListener("keypress",(e)=>{
   }
 })
 
-canvas.addEventListener("mousedown",(e)=>{
+//hover effect from mouse inside the bubble
+canvas.addEventListener("mousemove",(e)=>{
   bubbles.forEach((bubbles)=>{
     bubbles.hover(e.clientX,e.clientY);
   })
@@ -103,6 +104,8 @@ class Bubble{
     if(this.r > distance){
       this.color = "red";
     }
+    else 
+    this.color = "white";
     
   }
 }
