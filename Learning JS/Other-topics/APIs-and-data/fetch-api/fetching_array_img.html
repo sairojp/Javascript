@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch api</title>
+</head>
+<body>
+    <script>
+      let images = [
+        'user.jpg',
+        'image2.jpg'
+      ];
+      getImages(images);
+      async function getImages(images){
+        for (let image of images){
+        let response = await fetch(image);
+        console.log(response);
+        let blob = await response.blob();
+        let newElement = document.createElement('img');
+        newElement.src = URL.createObjectURL(blob);
+        newElement.width = '300';
+        document.body.appendChild(newElement);
+        }
+      
+      }
+
+
+    </script>
+</body>
+</html>
